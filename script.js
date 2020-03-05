@@ -22,8 +22,9 @@ var maxMoney = 10;
 function foodCount(){
     var foodwidth =  Math.floor(food/maxFood*100)+"%";
 
-    var  Text = "<div>FOOD</div>"
-    Text += "<div>" + food + "</div>"
+    var  Text = "<div style='margin-top: 6px'>FOOD</div>"
+    Text += "<div style='margin-top: 6px'>" + food + "</div>"
+    Text += "<div style='margin-top: 6px'>MAX: "+maxFood+"</div>"
     Text += "<div id='bar'>"
     Text += "<div id='progress' style='width:"+foodwidth+"'>"+ foodwidth +"</div>"
     Text +=  "</div>"
@@ -38,8 +39,9 @@ function foodCount(){
 function ironCount(){
     var ironwidth = Math.floor(iron/maxIron*100)+"%";
     
-    var  Text = "<div>IRON</div>"
-    Text += "<div>" + iron + "</div>"
+    var  Text = "<div style='margin-top: 6px'>IRON</div>"
+    Text += "<div style='margin-top: 6px'>" + iron + "</div>"
+    Text += "<div style='margin-top: 6px'>MAX: "+maxIron+"</div>"
     Text += "<div id='bar'>"
     Text += "<div id='progress' style='width:"+ironwidth+"'>"+ ironwidth +"</div>"
     Text +=  "</div>"
@@ -54,8 +56,9 @@ function ironCount(){
 function timberCount(){
     var timberwidth = timber/maxTimber*100 + "%";
 
-    var  Text = "<div>TIMBER</div>"
-    Text += "<div>" + timber + "</div>"
+    var  Text = "<div style='margin-top: 6px'>TIMBER</div>"
+    Text += "<div style='margin-top: 6px'>" + timber + "</div>"
+    Text += "<div style='margin-top: 6px'>MAX: "+maxTimber+"</div>"
     Text += "<div id='bar'>"
     Text += "<div id='progress' style='width:"+timberwidth+"'>"+ timberwidth +"</div>"
     Text +=  "</div>"
@@ -70,8 +73,9 @@ function timberCount(){
 function stoneCount(){
     var stonewidth = stone/maxStone*100 + "%";
 
-    var  Text = "<div>STONE</div>"
-    Text += "<div>" + stone + "</div>"
+    var  Text = "<div style='margin-top: 6px'>STONE</div>"
+    Text += "<div style='margin-top: 6px'>" + stone + "</div>"
+    Text += "<div style='margin-top: 6px'>MAX: "+maxStone+"</div>"
     Text += "<div id='bar'>"
     Text += "<div id='progress' style='width:"+stonewidth+"'>"+ stonewidth +"</div>"
     Text +=  "</div>"
@@ -86,8 +90,9 @@ function stoneCount(){
 function moneyCount(){
     var moneywidth = money/maxMoney*100 + "%";
     
-    var  Text = "<div>MONEY</div>"
-    Text += "<div>" + money + "</div>"
+    var  Text = "<div style='margin-top: 6px'>MONEY</div>"
+    Text += "<div style='margin-top: 6px'>" + money + "</div>"
+    Text += "<div style='margin-top: 6px'>MAX: "+maxMoney+"</div>"
     Text += "<div id='bar'>"
     Text += "<div id='progress' style='width:"+moneywidth+"'>"+ moneywidth +"</div>"
     Text += "</div>"

@@ -6,12 +6,10 @@ section{
 }
 
 section.resources div{
-    flex: 1 0 120px;  
+    flex: 0 0 300px;  
     margin: 10px;
     border-radius: 20px;
     text-align: center;
-    display: flex;
-    justify-content: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -20,7 +18,7 @@ section.resources div{
 }
 
 section.resources div div{
-    flex: 1 0 100px;  
+    flex: 1 1 90px;  
     margin: 0;
     border-radius: 20px;
     text-align: center;
@@ -28,10 +26,10 @@ section.resources div div{
     justify-content: center;
 }
 
-div#bar{
+#bar{
     display: block;
     background-color: black;
-    width: 50%;
+    width: 100%;
     height: 30px;
 }
 #progress{
@@ -45,22 +43,22 @@ div#bar{
     color: white;
 }
 
-#food{
-    background-color: green;
+section.info div{
+    flex: 1 1 300px;  
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#iron{
-    background-color: silver;
-}
 
-#timber{
-    background-color: burlywood;
-}
-
-#stone{
-    background-color: grey;
-}
-
-#money{
-    background-color: gold;
-}
+#food{background-color: green;}
+#iron{background-color: silver;}
+#timber{background-color: burlywood;}
+#stone{background-color: grey;}
+#money{background-color: gold;}
+#population{background-color: black;color: white}
+#influence{background-color: indigo; color: white;}
