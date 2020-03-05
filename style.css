@@ -54,7 +54,30 @@ section.info div{
     flex-wrap: wrap;
 }
 
+section.jobs div{
+    flex: 1 1 300px;  
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 4px;
+}
+section.jobs div div{
+    flex: 0 1 20px;  
+    margin: 0;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
+div.ruraljobs{background-color: palegreen;}
+div.cityjobs{background-color: rosybrown;}
+#jobsbackground{background-color: plum;}
 #food{background-color: green;}
 #iron{background-color: silver;}
 #timber{background-color: burlywood;}

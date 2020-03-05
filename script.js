@@ -1,7 +1,7 @@
 
 setInterval(foodCount, 1000);
 var food = 0;
-var maxFood = 10;
+var maxFood = 10000;
 
 setInterval(ironCount, 1000);
 var iron = 0;
@@ -30,10 +30,8 @@ function foodCount(){
     Text +=  "</div>"
     
     document.getElementById("food").innerHTML = Text;
-    
-    if(food < maxFood){
-        food++; 
-    }
+
+    food = foodCalc(food);
 }
 
 function ironCount(){
