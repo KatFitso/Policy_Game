@@ -1,0 +1,66 @@
+section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section.resources div{
+    flex: 1 0 120px;  
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+section.resources div div{
+    flex: 1 0 100px;  
+    margin: 0;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+div#bar{
+    display: block;
+    background-color: black;
+    width: 50%;
+    height: 30px;
+}
+#progress{
+    background-color: orange;
+    margin-top: 5px;
+    display: block;
+    height: 20px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+}
+
+#food{
+    background-color: green;
+}
+
+#iron{
+    background-color: silver;
+}
+
+#timber{
+    background-color: burlywood;
+}
+
+#stone{
+    background-color: grey;
+}
+
+#money{
+    background-color: gold;
+}
