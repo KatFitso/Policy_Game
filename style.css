@@ -24,6 +24,7 @@ section.resources div div{
     text-align: center;
     display: flex;
     justify-content: center;
+    margin-top: 5px;
 }
 
 #bar{
@@ -32,7 +33,7 @@ section.resources div div{
     width: 100%;
     height: 30px;
 }
-#progress{
+div[id*="Progress"]{
     background-color: orange;
     margin-top: 5px;
     display: block;
@@ -81,13 +82,13 @@ footer{
     background-color: bisque;
     width: 100%;
 }
-button[value="off"]{
+button[value="false"]{
     width: 218px;
     height: 60px;
     background-image: url(images/buttons/greyButton.jpg);
     background-size: cover;
 }
-button[value="on"]{
+button[value="true"]{
     background-image: url(images/buttons/orangeButton.jpg);
     width: 218px;
     height: 60px;
@@ -99,7 +100,7 @@ div.cityjobs{background-color: rosybrown;}
 #jobsbackground{background-color: plum;}
 #food{background-color: green;}
 #iron{background-color: silver;}
-#timber{background-color: burlywood;}
+#wood{background-color: burlywood;}
 #stone{background-color: grey;}
 #money{background-color: gold;}
 #population{background-color: black;color: white}

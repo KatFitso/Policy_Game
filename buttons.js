@@ -9,9 +9,9 @@ function startUp(){
 
 function toggle(e){
     let ID = e.target.value;
-    if(ID === "off"){
-        e.target.value = "on";
+    if(ID === "false"){
+        e.target.value = "true";
     }else{
-        e.target.value = "off";
+        e.target.value = "false";
     }
 }

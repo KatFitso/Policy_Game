@@ -1,107 +1,126 @@
 
-setInterval(foodCount, 1000);
-var food = 0;
-var maxFood = 10000;
+setInterval(function(){
+    update(foodInfo);
+    update(ironInfo);
+    update(woodInfo);
+    update(stoneInfo);
+    update(moneyInfo);
+}, 1000);
 
-setInterval(ironCount, 1000);
-var iron = 0;
-var maxIron = 20;
-
-setInterval(timberCount, 1000);
-var timber = 0;
-var maxTimber = 10;
-
-setInterval(stoneCount, 1000);
-var stone = 0;
-var maxStone = 10;
-
-setInterval(moneyCount, 1000);
-var money = 0;
-var maxMoney = 10;
-
-function foodCount(){
-    var foodwidth =  Math.floor(food/maxFood*100)+"%";
-
-    var  Text = "<div style='margin-top: 6px'>FOOD</div>"
-    Text += "<div style='margin-top: 6px'>" + food + "</div>"
-    Text += "<div style='margin-top: 6px'>MAX: "+maxFood+"</div>"
-    Text += "<div id='bar'>"
-    Text += "<div id='progress' style='width:"+foodwidth+"'>"+ foodwidth +"</div>"
-    Text +=  "</div>"
+let foodInfo = {
+    id: "food",
+    max: 100,
+    amount: 0,
+    //a^y + b(z) + c
+    a: 0,
+    y: 1,
+    b: 0,
+    z: 1,
+    c: 1,
+}
+let ironInfo = {
+    id: "iron",
+    max: 100,
+    amount: 0,
+    //a^y + b(z) + c
+    a: 0,
+    y: 1,
+    b: 0,
+    z: 1,
+    c: 1,
+}
+let woodInfo = {
+    id: "wood",
+    max: 100,
+    amount: 0,
+    //a^y + b(z) + c
+    a: 0,
+    y: 1,
+    b: 0,
+    z: 1,
+    c: 1,
+}
+let stoneInfo = {
+    id: "stone",
+    max: 100,
+    amount: 0,
+    //a^y + b(z) + c
+    a: 0,
+    y: 1,
+    b: 0,
+    z: 1,
+    c: 1,
+}
+let moneyInfo = {
+    id: "money",
+    max: 100,
+    amount: 0,
+    //a^y + b(z) + c
+    a: 0,
+    y: 1,
+    b: 0,
+    z: 1,
+    c: 1,
+}
     
-    document.getElementById("food").innerHTML = Text;
 
-    food = foodCalc(food);
+
+function update(source){
     
-    if(food > maxFood){
-        food = maxFood
+    let buttons = document.getElementsByClassName("button");
+    let amount = source.amount;
+    let max = source.max;
+    let id = source.id;
+
+    let a = source.a 
+    let b = source.b
+    let c = source.c
+    let z = source.z
+    let y = source.y
+
+    let burnFood = buttons[0].value;
+    let burnIron = buttons[1].value;
+    let burnWood = buttons[2].value;
+    let burnStone = buttons[3].value;
+    let burnMoney = buttons[4].value;
+
+    //policy modifiers
+    if(id == "food"){
+        if(burnFood == "true"){
+            c -= 3
+        }
     }
+
+    //math
+    let change = Math.pow(a, y) + b*z + c
+    if(amount < max){amount += change}
+    let width = amount/max * 100;
+
+    //update the page
+    document.getElementById(id+"Count").textContent = amount;
+    document.getElementById(id+"Max").textContent = max;
+    document.getElementById(id+"Progress").style.width = width+"%";
+    document.getElementById(id+"Progress").textContent = Math.floor(width)+"%";
+
+    //update the values
+    source.amount = amount;
+    
 }
 
-function ironCount(){
-    var ironwidth = Math.floor(iron/maxIron*100)+"%";
-    
-    var  Text = "<div style='margin-top: 6px'>IRON</div>"
-    Text += "<div style='margin-top: 6px'>" + iron + "</div>"
-    Text += "<div style='margin-top: 6px'>MAX: "+maxIron+"</div>"
-    Text += "<div id='bar'>"
-    Text += "<div id='progress' style='width:"+ironwidth+"'>"+ ironwidth +"</div>"
-    Text +=  "</div>"
-    
-    document.getElementById("iron").innerHTML = Text;
-    
-    if(iron < maxIron){
-        iron++; 
-    }
-}
+    // var foodwidth =  Math.floor(food/maxFood*100)+"%";
 
-function timberCount(){
-    var timberwidth = timber/maxTimber*100 + "%";
+    // var  Text = "<div style='margin-top: 6px'>FOOD</div>"
+    // Text += "<div style='margin-top: 6px'>" + food + "</div>"
+    // Text += "<div style='margin-top: 6px'>MAX: "+maxFood+"</div>"
+    // Text += "<div id='bar'>"
+    // Text += "<div id='progress' style='width:"+foodwidth+"'>"+ foodwidth +"</div>"
+    // Text +=  "</div>"
+    
+    // document.getElementById("food").innerHTML = Text;
 
-    var  Text = "<div style='margin-top: 6px'>TIMBER</div>"
-    Text += "<div style='margin-top: 6px'>" + timber + "</div>"
-    Text += "<div style='margin-top: 6px'>MAX: "+maxTimber+"</div>"
-    Text += "<div id='bar'>"
-    Text += "<div id='progress' style='width:"+timberwidth+"'>"+ timberwidth +"</div>"
-    Text +=  "</div>"
+    // food = foodCalc(food);
     
-    document.getElementById("timber").innerHTML = Text;
-    
-    if(timber < maxTimber){
-        timber++; 
-    }
-}
+    // if(food > maxFood){
+    //     food = maxFood
+    // }
 
-function stoneCount(){
-    var stonewidth = stone/maxStone*100 + "%";
-
-    var  Text = "<div style='margin-top: 6px'>STONE</div>"
-    Text += "<div style='margin-top: 6px'>" + stone + "</div>"
-    Text += "<div style='margin-top: 6px'>MAX: "+maxStone+"</div>"
-    Text += "<div id='bar'>"
-    Text += "<div id='progress' style='width:"+stonewidth+"'>"+ stonewidth +"</div>"
-    Text +=  "</div>"
-    
-    document.getElementById("stone").innerHTML = Text;
-    
-    if(stone < maxStone){
-        stone++; 
-    }
-}
-
-function moneyCount(){
-    var moneywidth = money/maxMoney*100 + "%";
-    
-    var  Text = "<div style='margin-top: 6px'>MONEY</div>"
-    Text += "<div style='margin-top: 6px'>" + money + "</div>"
-    Text += "<div style='margin-top: 6px'>MAX: "+maxMoney+"</div>"
-    Text += "<div id='bar'>"
-    Text += "<div id='progress' style='width:"+moneywidth+"'>"+ moneywidth +"</div>"
-    Text += "</div>"
-    
-    document.getElementById("money").innerHTML = Text;
-    
-    if(money < maxMoney){
-        money++; 
-    }
-}
