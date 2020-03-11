@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link href="style.css" rel="stylesheet" />
+    <link href="CSS/style.css" rel="stylesheet" />
 
-    <script src="buttons.js" async></script>
-    <script src="population.js" async></script>
-    <script src="foodcalc.js" async></script>
-    <script src="script.js" async></script>
+    <script src="JS/resourceInfo.js" async></script>
+    <script src="JS/buttons.js" async></script>
+    <script src="JS/population.js" async></script>
+    <script src="JS/foodcalc.js" async></script>
+    <script src="JS/script.js" async></script>
 
 </head>
 <header>
@@ -20,40 +21,40 @@
     <section class="resources">
         <div id="food">
             <div style='margin-top: 6px'>FOOD</div>
-            <div id="foodCount" style='margin-top: 6px'>0</div>
-            <div id="foodMax" style='margin-top: 6px'>MAX: 10</div>
+            <div id="foodCount" style='margin-top: 6px'>Count</div>
+            <div id="foodMax" style='margin-top: 6px'>MAX</div>
             <div id='bar'>
                 <div id='foodProgress' style='width:0'>0%</div>
             </div>
         </div>
         <div id="iron">
             <div style='margin-top: 6px'>IRON</div>
-            <div id="ironCount" style='margin-top: 6px'>0</div>
-            <div id="ironMax" style='margin-top: 6px'>MAX: 10</div>
+            <div id="ironCount" style='margin-top: 6px'>Count</div>
+            <div id="ironMax" style='margin-top: 6px'>MAX</div>
             <div id='bar'>
                 <div id='ironProgress' style='width:0'>0%</div>
             </div>
         </div>
         <div id="wood">
             <div style='margin-top: 6px'>WOOD</div>
-            <div id="woodCount" style='margin-top: 6px'>0</div>
-            <div id="woodMax" style='margin-top: 6px'>MAX: 10</div>
+            <div id="woodCount" style='margin-top: 6px'>Count</div>
+            <div id="woodMax" style='margin-top: 6px'>MAX</div>
             <div id='bar'>
                 <div id='woodProgress' style='width:0'>0%</div>
             </div>
         </div>
         <div id="stone">
             <div style='margin-top: 6px'>STONE</div>
-            <div id="stoneCount" style='margin-top: 6px'>0</div>
-            <div id="stoneMax" style='margin-top: 6px'>MAX: 10</div>
+            <div id="stoneCount" style='margin-top: 6px'>Count</div>
+            <div id="stoneMax" style='margin-top: 6px'>MAX</div>
             <div id='bar'>
                 <div id='stoneProgress' style='width:0'>0%</div>
             </div>
         </div>
         <div id="money">
-            <div id="moneyCount" style='margin-top: 6px'>MONEY</div>
-            <div id="moneyMax" style='margin-top: 6px'>0</div>
-            <div style='margin-top: 6px'>MAX: 10</div>
+            <div style='margin-top: 6px'>MONEY</div>
+            <div id="moneyCount" style='margin-top: 6px'>Count</div>
+            <div id="moneyMax" style='margin-top: 6px'>MAX: 10</div>
             <div id='bar'>
                 <div id='moneyProgress' style='width:0'>0%</div>
             </div>
@@ -125,11 +126,11 @@
     </section>
 
     <section class="buttons">
-        <button class="button" name="burnFood" value="false" onclick="toggle()">Burn Food</button>
-        <button class="button" name="burnIron" value="false" onclick="toggle()">Burn Iron</button>
-        <button class="button" name="burnWood" value="false" onclick="toggle()">Burn Wood</button>
-        <button class="button" name="burnStone" value="false" onclick="toggle()">Burn Stone</button>
-        <button class="button" name="burnMoney" value="false" onclick="toggle()">Burn Money</button>
+        <button class="button" value="false" onclick="toggle()">Burn Food</button>
+        <button class="button" value="false" onclick="toggle()">Burn Iron</button>
+        <button class="button" value="false" onclick="toggle()">Burn Wood</button>
+        <button class="button" value="false" onclick="toggle()">Burn Stone</button>
+        <button class="button" value="false" onclick="toggle()">Burn Money</button>
 
     </section>
 

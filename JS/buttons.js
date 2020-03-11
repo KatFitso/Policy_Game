@@ -1,4 +1,11 @@
 window.onload = startUp;
+window.onload = function(){
+        update(foodInfo);
+        update(ironInfo);
+        update(woodInfo);
+        update(stoneInfo);
+        update(moneyInfo);
+};
 
 function startUp(){
     var buttons = document.getElementsByClassName("button");

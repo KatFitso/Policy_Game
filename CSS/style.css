@@ -85,11 +85,11 @@ footer{
 button[value="false"]{
     width: 218px;
     height: 60px;
-    background-image: url(images/buttons/greyButton.jpg);
+    background-image: url(../images/buttons/greyButton.jpg);
     background-size: cover;
 }
 button[value="true"]{
-    background-image: url(images/buttons/orangeButton.jpg);
+    background-image: url(../images/buttons/orangeButton.jpg);
     width: 218px;
     height: 60px;
     background-size: cover;
