@@ -74,6 +74,25 @@ section.jobs div div{
     justify-content: center;
     flex-direction: column;
 }
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: bisque;
+    width: 100%;
+}
+button[value="off"]{
+    width: 218px;
+    height: 60px;
+    background-image: url(images/buttons/greyButton.jpg);
+    background-size: cover;
+}
+button[value="on"]{
+    background-image: url(images/buttons/orangeButton.jpg);
+    width: 218px;
+    height: 60px;
+    background-size: cover;
+}  
 
 div.ruraljobs{background-color: palegreen;}
 div.cityjobs{background-color: rosybrown;}

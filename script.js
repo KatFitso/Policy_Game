@@ -32,6 +32,10 @@ function foodCount(){
     document.getElementById("food").innerHTML = Text;
 
     food = foodCalc(food);
+    
+    if(food > maxFood){
+        food = maxFood
+    }
 }
 
 function ironCount(){
