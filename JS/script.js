@@ -5,6 +5,7 @@ setInterval(function(){
         update(woodInfo);
         update(stoneInfo);
         update(moneyInfo);
+        population();
     }, 
 1000);
 
@@ -55,7 +56,7 @@ function update(source){
     }
 
     //update the page
-    document.getElementById(id+"Count").textContent = Math.floor(amount);
+    document.getElementById(id+"Count").textContent = Math.floor(amount) + " (" + change + ")";
     document.getElementById(id+"Max").textContent = max;
     document.getElementById(id+"Progress").style.width = width+"%";
     document.getElementById(id+"Progress").textContent = Math.floor(width)+"%";

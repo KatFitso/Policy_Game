@@ -1,4 +1,4 @@
-window.onload = startUp;
+window.onload = startUp();
 window.onload = function(){
         update(foodInfo);
         update(ironInfo);
@@ -16,7 +16,7 @@ function startUp(){
 
 function toggle(e){
     let ID = e.target.value;
-    if(ID === "false"){
+    if(ID == "false"){
         e.target.value = "true";
     }else{
         e.target.value = "false";
