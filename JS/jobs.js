@@ -1,3 +1,19 @@
+
+let jobRatios={
+    forager: 1,
+
+}
+
+function jobsCalc( ){
+    let workers = populus.workers;
+    let foragers = workers * jobRatios.forager;
+
+    document.getElementById("foragers").textContent = rounding(foragers)
+
+    jobs.foragers = foragers;
+}
+
+
 // var foodprod = 0;
 // var foodcons = 0;
 // var infood = 0 ;

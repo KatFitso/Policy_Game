@@ -9,8 +9,9 @@
 
     <script src="JS/resourceInfo.js" async></script>
     <script src="JS/buttons.js" async></script>
+    <script src="JS/food.js" async></script>
     <script src="JS/population.js" async></script>
-    <script src="JS/foodcalc.js" async></script>
+    <script src="JS/jobs.js" async></script>
     <script src="JS/script.js" async></script>
 
 </head>
@@ -64,63 +65,77 @@
     <section class="info">
         <div id="population">
             <div style='margin-top: 6px'>Population</div>
-            <div id="popCount" style='margin-top: 6px'"">0</div>
+            <div id="popCount" style='margin-top: 6px'>0</div>
+            <div style='margin-top: 6px'>Children</div>
+            <div id="childCount" style='margin-top: 6px'>0</div>
+            <div style='margin-top: 6px'>Workers</div>
+            <div id="workerCount" style='margin-top: 6px'>0</div>
+            <div style='margin-top: 6px'>Elders</div>
+            <div id="elderCount" style='margin-top: 6px'>0</div>
+            
+            
+            
+            
         </div>
         <div id="influence">
             <div style='margin-top: 6px'>Influence</div>
             <div style='margin-top: 6px'>0</div>
+            <div style='margin-top: 6px'>Births</div>
+            <div id="birthCount" style='margin-top: 6px'>0</div>
+            <div style='margin-top: 6px'>Deaths</div>
+            <div id="deathCount" style='margin-top: 6px'>0</div>
         </div>
     </section>
 
     <section class="jobs">
         <div id="jobsbackground" class="jobs">
-            <div id="Farmers" class="ruraljobs">
+            <div id="farmers" class="ruraljobs">
                 <div style='margin-top: 3px'>Farmers</div>
                 <div>0</div>
             </div>
-            <div id="Foragers" class="ruraljobs">
+            <div class="ruraljobs">
                 <div style='margin-top: 3px'>Foragers</div>
-                <div>0</div>
+                <div id="foragers">0</div>
             </div>
-            <div id="Loggers" class="ruraljobs">
+            <div class="ruraljobs">
                 <div style='margin-top: 3px'>Loggers</div>
-                <div>0</div>
+                <div id="loggers" >0</div>
             </div>
-            <div id="Hunters" class="ruraljobs">
+            <div  class="ruraljobs">
                 <div style='margin-top: 3px'>Hunters</div>
-                <div>0</div>
+                <div id="hunters">0</div>
             </div>
-            <div id="Miners" class="ruraljobs">
+            <div class="ruraljobs">
                 <div style='margin-top: 3px'>Miners</div>
-                <div>0</div>
+                <div id="miners">0</div>
             </div>
-            <div id="Traders" class="cityjobs">
+            <div class="cityjobs">
                 <div style='margin-top: 3px'>Traders</div>
-                <div>0</div>
+                <div id="traders">0</div>
             </div>
-            <div id="Scholars" class="cityjobs">
+            <div class="cityjobs">
                 <div style='margin-top: 3px'>Scholars</div>
-                <div>0</div>
+                <div id="scholars">0</div>
             </div>
-            <div id="Military" class="cityjobs">
+            <div  class="cityjobs">
                 <div style='margin-top: 3px'>Military</div>
-                <div>0</div>
+                <div id="military">0</div>
             </div>
-            <div id="Doctors" class="cityjobs">
+            <div  class="cityjobs">
                 <div style='margin-top: 3px'>Doctors</div>
-                <div>0</div>
+                <div id="doctors">0</div>
             </div>
-            <div id="Artisans" class="cityjobs">
+            <div  class="cityjobs">
                 <div style='margin-top: 3px'>Artisans</div>
-                <div>0</div>
+                <div id="artisans">0</div>
             </div>
-            <div id="Entertainers" class="cityjobs">
+            <div  class="cityjobs">
                 <div style='margin-top: 3px'>Entertainers</div>
-                <div>0</div>
+                <div id="entertainers">0</div>
             </div>
-            <div id="Carpenters" class="cityjobs">
+            <div  class="cityjobs">
                 <div style='margin-top: 3px'>Carpenters</div>
-                <div>0</div>
+                <div id="carpenters">0</div>
             </div>
         </div>
     </section>

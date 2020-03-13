@@ -1,57 +1,63 @@
+
+//just a function that can be used everywhere else to round numbers
+//you can add a lot more to this later for formatting with commas or $ etc
+//should also be used for the people because you need to have whole people
+function rounding(num){
+    if(num > 0){
+        return Math.ceil(num)
+    }else if(num < 0){
+        return Math.floor(num)
+    }else{
+        return 0;
+    }
+}
+
+let speed = {
+    norm: 1000,
+    fast: 500,
+    super: 250,
+    crazy: 100,
+}
+
 let foodInfo = {
     id: "food",
     max: 100,
     amount: 0,
-    //a^y + b(z) + c
-    a: 0,
-    y: 1,
-    b: 0,
-    z: 1,
-    c: 1,
+    production: 2,
+    consumption: 1,
+    change: 1,
 }
 let ironInfo = {
     id: "iron",
     max: 100,
     amount: 0,
-    //a^y + b(z) + c
-    a: 0,
-    y: 1,
-    b: 0,
-    z: 1,
-    c: 1,
+    production: 2,
+    consumption: 1,
+    change: 1,
 }
 let woodInfo = {
     id: "wood",
     max: 100,
     amount: 0,
-    //a^y + b(z) + c
-    a: 0,
-    y: 1,
-    b: 0,
-    z: 1,
-    c: 3
+    production: 2,
+    consumption: 1,
+    change: 1,
 }
 let stoneInfo = {
     id: "stone",
     max: 100,
     amount: 0,
-    //a^y + b(z) + c
-    a: 0,
-    y: 1,
-    b: 0,
-    z: 1,
-    c: 1
+    production: 2,
+    consumption: 1,
+    change: 1,
 }
 let moneyInfo = {
     id: "money",
     max: 100,
     amount: 0,
-    //a(b+c(z))
-    a: 0,
-    y: 1,
-    b: 0,
-    z: 1,
-    c: 1
+    production: 2,
+    consumption: 1,
+    change: 1,
 }
 let populus = {
     id: "pop",
@@ -63,7 +69,7 @@ let populus = {
 }
 let jobs = {
     farmers: 0,
-    foragers: 0,
+    foragers: 17,
     loggers: 0,
     hunters: 0,
     miners: 0,

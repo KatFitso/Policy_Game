@@ -1,97 +1,66 @@
 
 function population(){
-    let amount = populus.amount;
+    let population = populus.amount;
     let children = populus.children; //children can't work
     let workers = populus.workers; //workers
     let elders = populus.elders; //elders can't work
 
-    let id = populus.id; //pop
-    let temp = 0;
-
     //how much food people eat, 
-    let foodCon = .2*(children) + .5*(workers) + .3*(elders);
+    
 
     //if we have a surplus of food then we can use that to grow the population
-    let growth = Math.floor((foodInfo.amount-foodCon)/10);
-
-    let childChange = Math.floor(growth*0.1)
-    let workerChange = Math.floor(growth *0.8)
-    let elderChange = Math.floor(growth *0.1)
-
-    //Makes sure that 100% of the growth is accounted for
-    temp = childChange + workerChange + elderChange;
-    if (temp != growth){
-        temp = growth - temp;
-        workerChange += temp;
+    let births = Math.floor(foodInfo.amount/20);//should be updated later
+    if(births < 0){
+        births = 0;
     }
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    the population will grow and only be children. when the time ticks over 
+    10% of the children will become workers and 2% of the workers will 
+    become elders also unable to work and then 10% of all elders will die. 
 
-    children += childChange;
-    workers += workerChange;
-    elders += elderChange;
+    for now this is a perfect with no unnatural deaths.
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-    //so the pops can't go negative
-    if(children < 0){
-        temp = 0 - children
-        children += temp
-        workers -= temp;
-    }
-    if(elders < 0){
-        temp = 0 - elders;
-        elders += temp
-        workers -= temp;
-    }
+    let childAgedUp = children * 0.1
+    let workerAgedUp = workers * 0.03   
+    let deaths = elders *.1
+
+    children += births;
+    
+    workers += childAgedUp;
+    children -= childAgedUp;
+
+    elders += workerAgedUp;
+    workers -= workerAgedUp;
+
+    elders -= deaths;
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+    population = children + workers + elders;
+    let change = births - deaths
 
     //lose condition
-    amount = children + workers + elders;
-
-    if(amount<=0){
+    if(population<=0){
         alert("you lose");
     }
 
+    //updates the population values
     populus.children = children;
     populus.elders = elders;
     populus.workers = workers;
-    populus.amount = amount;
-    document.getElementById("popCount").textContent = amount + " (" + growth + ")";
+    populus.amount = population;
+    
+    //updates the food values
+    let foodCon = .4*(children) + .5*(workers) + .3*(elders);
+    foodInfo.consumption = foodCon;
+
+    //updates the page
+    population = rounding(children) + rounding(workers) + rounding(elders);
+    
+    document.getElementById("popCount").textContent = rounding(population) + " (" + rounding(change) + ")";
+    document.getElementById("childCount").textContent = rounding(children) + " (" + rounding((births - childAgedUp)) + ")";
+    document.getElementById("workerCount").textContent = rounding(workers) + " (" + rounding((childAgedUp - workerAgedUp)) + ")";
+    document.getElementById("elderCount").textContent = rounding(elders) + " (" + rounding((workerAgedUp - deaths)) + ")";
+    document.getElementById("deathCount").textContent = rounding(deaths) + " (" + -(100-((population-deaths) / population * 100)).toFixed(2) + "%)";
+    document.getElementById("birthCount").textContent = rounding(births) + " (" + -(100-((population+births) / population * 100)).toFixed(2) + "%)";
 }
-
-// var pop = 5000 ;
-// var popgrowth = 15 ;
-// var popdecline = 5 ;
-// var farmers = 0;
-
-// setInterval(popCount, 1000);
-// setInterval(jobs, 1000) ;
-
-// function popCalc(){
-
-//     return pop + popgrowth - popdecline ;
-
-// }
-// function farmCalc(){
-
-//     return pop * .2 ;
-
-// }
-
-// function popCount() {
-
-//     var  Text = "<div style='margin-top: 6px'>Population</div>"
-//     Text += "<div style='margin-top: 6px'>" + pop + "</div>"
-
-
-//     document.getElementById("population").innerHTML = Text;
-
-//     pop = popCalc(pop);
-
-// }
-// function jobs() {
-
-//     var  Text = "<div style='margin-top: 3px'>Farmers</div>"
-//     Text += "<div>" + farmers + "</div>"
-
-//     document.getElementById("Farmers").innerHTML = Text;
-
-//     farmers = farmCalc(farmers) ;
-
-// }
